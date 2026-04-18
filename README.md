@@ -38,15 +38,32 @@ fastapi/
 
 ## Installation
 
-1. **Local Development:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Option 1: Pull Pre-built Image
+```bash
+# Pull the Docker image
+docker pull adamya2307/fastapi@sha256:9b261e2eebfab5f142774c0ed31601af5d1c225fe7a14e3f9b3f34adff7aed60
 
-2. **Docker Development:**
-   ```bash
-   docker compose up --build
-   ```
+# Run standalone (requires external MySQL)
+docker run -d -p 8000:8000 \
+  -e MYSQL_HOST=<mysql_host> \
+  -e MYSQL_USER=root \
+  -e MYSQL_PASSWORD=0000 \
+  -e MYSQL_DATABASE=fast_api \
+  --name fastapi_app adamya2307/fastapi@sha256:9b261e2eebfab5f142774c0ed31601af5d1c225fe7a14e3f9b3f34adff7aed60
+
+# Or run with MySQL using docker-compose
+docker compose up
+```
+
+### Option 2: Build from Source
+```bash
+docker compose up --build
+```
+
+### Option 3: Local Development
+```bash
+pip install -r requirements.txt
+```
 
 ## Environment Variables
 
