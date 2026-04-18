@@ -1,0 +1,13 @@
+
+
+# Python Cache
+**/__pycache__/
+*.pyc
+
+# Local Config & Tools
+.vscode/
+.gitignore
+
+.pyo 
+venv
+.env

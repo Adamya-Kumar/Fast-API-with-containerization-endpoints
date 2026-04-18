@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS fast_api;
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '0000';
+FLUSH PRIVILEGES;
